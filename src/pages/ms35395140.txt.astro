@@ -1,20 +1,12 @@
 ---
-const verificationData = {
+const jsonData = {
   "Description": "Fichier de vérification de la propriété du domaine pour Microsoft 365 : placer dans la racine du site web",
   "Domain": "fhgdjhfgdjhfgd.up.railway.app",
   "Id": "f58a1e05-6512-4491-9510-7b16670249fe"
 };
+
+// Set the response headers to serve as JSON
+Astro.response.headers.set('Content-Type', 'application/json');
 ---
 
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Domain Verification</title>
-  </head>
-  <body>
-    <pre>
-      {JSON.stringify(verificationData, null, 2)}
-    </pre>
-  </body>
-</html>
+{JSON.stringify(jsonData)}
